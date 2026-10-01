@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="An unofficial Basgiath War College quadrant assessment fan project."
+  >
+
+  <title>Basgiath War College | Preliminary Assessment</title>
+
+  <link
+    rel="stylesheet"
+    href="css/styles.css"
+  >
+</head>
+
+<body>
+
+  <main class="experience">
+
+    <!-- =================================
+         SCREEN 1: IDENTIFICATION
+    ================================== -->
+
+    <section
+      class="screen active"
+      id="identity-screen"
+    >
+
+      <div class="archive-panel">
+
+        <header class="institution-header">
+
+          <img
+            src="assets/images/basgiath-seal.png"
+            class="college-seal"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div class="institution-title">
+
+            <p class="eyebrow">
+              Basgiath War College
+            </p>
+
+            <p class="record-label">
+              Office of Conscription
+            </p>
+
+          </div>
+
+        </header>
+
+        <div class="record-rule"></div>
+
+        <div class="identity-content">
+
+          <h1>
+            Incoming Correspondence
+          </h1>
+
+          <p class="lead-copy">
+            Official correspondence has been identified.
+            Candidate verification is required before retrieval.
+          </p>
+
+          <form id="identity-form">
+
+            <label for="candidate-name">
+              Identify Yourself
+            </label>
+
+            <input
+              type="text"
+              id="candidate-name"
+              name="candidate-name"
+              placeholder="Candidate name"
+              autocomplete="name"
+              required
+            >
+
+            <button
+              type="submit"
+              class="primary-button"
+            >
+              Retrieve Correspondence
+            </button>
+
+          </form>
+
+        </div>
+
+        <footer class="record-footer">
+
+          <span>
+            Candidate Access
+          </span>
+
+          <span>
+            Status // Pending
+          </span>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         SCREEN 2: CORRESPONDENCE
+    ================================== -->
+
+    <section
+      class="screen"
+      id="letter-screen"
+    >
+
+      <article class="letter">
+
+        <header class="letter-header">
+
+          <img
+            src="assets/images/basgiath-seal.png"
+            class="college-seal letter-seal"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <div>
+
+            <p class="eyebrow">
+              Basgiath War College
+            </p>
+
+            <p class="record-label">
+              Office of Conscription
+            </p>
+
+          </div>
+
+        </header>
+
+        <div class="letter-rule"></div>
+
+        <p class="document-code">
+          OFFICIAL CORRESPONDENCE
+        </p>
+
+        <div class="letter-body">
+
+          <p>
+            Candidate
+          </p>
+
+          <h2 class="candidate-name-display"></h2>
+
+          <p>
+            You have been summoned to Basgiath War College.
+          </p>
+
+          <p>
+            Prior to reporting for Conscription Day,
+            you are required to complete a preliminary
+            quadrant assessment.
+          </p>
+
+          <p>
+            Your responses will be evaluated against
+            the four divisions of Basgiath War College:
+            Riders, Scribes, Healers, and Infantry.
+          </p>
+
+          <p class="letter-warning">
+            Survival remains your responsibility.
+          </p>
+
+          <p class="handwritten margin-note">
+            Report as ordered.<br>
+            No exceptions.
+          </p>
+
+        </div>
+
+        <button
+          id="begin-assessment"
+          class="document-button"
+        >
+          Begin Assessment
+        </button>
+
+        <footer class="letter-footer">
+
+          <span>
+            Office of Conscription
+          </span>
+
+          <span>
+            Basgiath War College
+          </span>
+
+        </footer>
+
+      </article>
+
+    </section>
+
+
+    <!-- =================================
+         SCREEN 3: ASSESSMENT
+    ================================== -->
+
+    <section
+      class="screen"
+      id="quiz-screen"
+    >
+
+      <div class="assessment-panel">
+
+        <header class="assessment-header">
+
+          <div>
+
+            <p class="eyebrow">
+              Basgiath War College
+            </p>
+
+            <p class="record-label">
+              Preliminary Quadrant Assessment
+            </p>
+
+          </div>
+
+          <p
+            id="progress"
+            class="assessment-progress"
+          >
+            FORM 04-A // 1 OF 6
+          </p>
+
+        </header>
+
+        <div class="record-rule"></div>
+
+        <div class="question-area">
+
+          <p class="document-code">
+            Candidate Evaluation
+          </p>
+
+          <h2 id="question-text"></h2>
+
+          <div id="answer-container"></div>
+
+        </div>
+
+        <footer class="record-footer">
+
+          <span>
+            Candidate //
+            <span class="candidate-name-display"></span>
+          </span>
+
+          <span>
+            Response Required
+          </span>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         SCREEN 4: PROCESSING
+    ================================== -->
+
+    <section
+      class="screen"
+      id="processing-screen"
+    >
+
+      <div class="processing-panel">
+
+        <img
+          src="assets/images/basgiath-seal.png"
+          class="processing-seal"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <p class="eyebrow">
+          Basgiath War College
+        </p>
+
+        <p class="record-label">
+          Candidate Evaluation
+        </p>
+
+        <div class="processing-rule"></div>
+
+        <h2>
+          Reviewing Responses
+        </h2>
+
+        <p>
+          Evaluating candidate compatibility
+          across all four quadrants.
+        </p>
+
+        <div
+          class="processing-indicator"
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <p class="processing-status">
+          Assignment pending
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         SCREEN 5: TIE BREAKER
+    ================================== -->
+
+    <section
+      class="screen"
+      id="tiebreaker-screen"
+    >
+
+      <div class="assessment-panel flagged-panel">
+
+        <header class="assessment-header">
+
+          <div>
+
+            <p class="eyebrow">
+              Basgiath War College
+            </p>
+
+            <p class="record-label">
+              Preliminary Quadrant Assessment
+            </p>
+
+          </div>
+
+          <p class="assessment-warning">
+            Inconclusive
+          </p>
+
+        </header>
+
+        <div class="record-rule"></div>
+
+        <div class="question-area">
+
+          <p class="flagged-label">
+            Record Flagged
+          </p>
+
+          <h2>
+            Assessment Inconclusive
+          </h2>
+
+          <p class="handwritten review-note">
+            Results do not conform.<br>
+            Manual review required.
+          </p>
+
+          <p
+            id="tiebreaker-question"
+            class="tiebreaker-question"
+          ></p>
+
+          <div id="tiebreaker-answers"></div>
+
+        </div>
+
+        <footer class="record-footer">
+
+          <span>
+            Candidate //
+            <span class="candidate-name-display"></span>
+          </span>
+
+          <span>
+            Additional Response Required
+          </span>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+
+<!-- =================================
+     SCREEN 6: PLACEMENT
+================================= -->
+
+<section
+  class="screen"
+  id="result-screen"
+>
+
+  <article class="placement-record">
+
+    <header class="placement-header">
+
+      <img
+        src="assets/images/basgiath-seal.png"
+        class="college-seal placement-seal"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <div>
+
+        <p class="eyebrow">
+          Basgiath War College
+        </p>
+
+        <p class="record-label">
+          Official Placement Record
+        </p>
+
+      </div>
+
+    </header>
+
+    <div class="placement-rule"></div>
+
+    <p class="document-code">
+      Quadrant Assignment
+    </p>
+
+    <div class="candidate-record">
+
+      <p class="record-field">
+        Candidate
+      </p>
+
+      <h2 class="candidate-name-display"></h2>
+
+    </div>
+
+    <div class="assignment">
+
+      <p class="record-field">
+        Preliminary Assessment Result
+      </p>
+
+      <h1 id="quadrant-result"></h1>
+
+    </div>
+
+    <div class="placement-details">
+
+      <p id="result-description"></p>
+
+      <p
+        id="result-orders"
+        class="result-orders"
+      ></p>
+
+    </div>
+
+    <div
+      class="placement-stamp"
+      aria-hidden="true"
+    >
+      ASSIGNED
+    </div>
+
+
+    <!-- SHARE RESULTS -->
+
+    <div class="share-section">
+
+      <div class="share-rule"></div>
+
+      <p class="share-heading">
+        Your assignment is official.
+      </p>
+
+      <p class="share-copy">
+        Share your placement and tag
+        <strong>@sagewavewebdesign</strong>
+        so we can see where the incoming class was assigned.
+      </p>
+
+      <div class="result-actions">
+
+        <button
+          id="share-assignment"
+          class="share-button"
+          type="button"
+        >
+          Share My Assignment
+        </button>
+
+        <button
+          id="restart-assessment"
+          class="document-button"
+          type="button"
+        >
+          Retake Assessment
+        </button>
+
+      </div>
+
+      <p
+        id="share-status"
+        class="share-status"
+        aria-live="polite"
+      ></p>
+
+    </div>
+
+
+    <!-- RECORD FOOTER -->
+
+    <footer class="placement-footer">
+
+      <span>
+        Office of Conscription
+      </span>
+
+      <span>
+        Record Status // Complete
+      </span>
+
+    </footer>
+
+
+    <!-- FAN PROJECT CREDIT -->
+
+    <p class="fan-project">
+      Unofficial fan project inspired by the
+      Empyrean series.
+      Built by
+      <a
+        href="https://www.sagewavewebdesign.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Sagewave Web Design
+      </a>.
+      Not affiliated with the author or publisher.
+    </p>
+
+  </article>
+
+</section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
