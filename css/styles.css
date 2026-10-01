@@ -2068,6 +2068,76 @@ h2 {
     rotate(0.1deg);
 }
 
+/* SECONDARY SAVE ACTION */
+
+.save-button {
+  position: relative;
+
+  padding: 13px 20px;
+
+  border: 0;
+  border-radius: 0;
+
+  background:
+    transparent;
+
+  color:
+    #29251e;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size: 0.61rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transform:
+    rotate(-0.15deg);
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.save-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    -2px
+    -3px
+    -3px
+    -2px;
+
+  border:
+    1px solid
+    rgba(41, 37, 30, 0.52);
+
+  transform:
+    rotate(0.4deg);
+
+  pointer-events: none;
+}
+
+.save-button:hover {
+  background:
+    rgba(41, 37, 30, 0.07);
+
+  transform:
+    translateY(-1px)
+    rotate(0.1deg);
+}
+
+.save-button:active {
+  transform:
+    translateY(0)
+    rotate(-0.1deg);
+}
+
 
 /* KEEP RETAKE ALIGNED WITH SHARE */
 
@@ -2150,11 +2220,11 @@ h2 {
     gap: 17px;
   }
 
-  .share-button,
-  .result-actions .document-button {
-    width: 100%;
-  }
-
+ .share-button,
+.save-button,
+.result-actions .document-button {
+  width: 100%;
+}
 }
 
 /* =================================

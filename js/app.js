@@ -415,12 +415,15 @@ const tieBreakerAnswers =
 
 const placementRecord =
   document.querySelector(".placement-record");
+
   const shareButton =
   document.getElementById("share-assignment");
 
+const saveButton =
+  document.getElementById("save-assignment");
+
 const shareStatus =
   document.getElementById("share-status");
-
 let assignedQuadrant = "";
 
 
@@ -1043,6 +1046,52 @@ shareButton.addEventListener(
   }
 );
 
+// ========================================
+// SAVE ASSIGNMENT
+// ========================================
+
+saveButton.addEventListener(
+  "click",
+  async function () {
+
+    if (!assignedQuadrant) {
+      return;
+    }
+
+    shareStatus.textContent =
+      "Preparing placement record...";
+
+    try {
+
+      const imageBlob =
+        await createShareCard();
+
+      const fileName =
+        `basgiath-${assignedQuadrant}-assignment.png`;
+
+      downloadShareCard(
+        imageBlob,
+        fileName
+      );
+
+      shareStatus.textContent =
+        "Assignment card saved.";
+
+    } catch (error) {
+
+      console.error(
+        "Save failed:",
+        error
+      );
+
+      shareStatus.textContent =
+        "Unable to save assignment.";
+
+    }
+
+  }
+);
+
 
 // ========================================
 // CREATE SHARE CARD
@@ -1450,7 +1499,7 @@ async function createShareCard() {
   ctx.fillText(
     "Where would Basgiath place you?",
     540,
-    1035
+    980
   );
 
 
@@ -1463,58 +1512,92 @@ async function createShareCard() {
   ctx.fillText(
     "Take the assessment and share your assignment.",
     540,
-    1080
+    1025
   );
 
 
-  // --------------------------------------
-  // SAGEWAVE CREDIT
-  // --------------------------------------
+// --------------------------------------
+// ASSESSMENT QR + SAGEWAVE CREDIT
+// --------------------------------------
 
-  ctx.strokeStyle =
-    "rgba(67, 55, 36, 0.25)";
+ctx.strokeStyle =
+  "rgba(67, 55, 36, 0.25)";
 
-  ctx.lineWidth = 1;
+ctx.lineWidth = 1;
 
-  ctx.beginPath();
+ctx.beginPath();
 
-  ctx.moveTo(
-    270,
-    1150
+ctx.moveTo(
+  230,
+  1080
+);
+
+ctx.lineTo(
+  850,
+  1080
+);
+
+ctx.stroke();
+
+
+// QR LABEL
+
+ctx.fillStyle =
+  "#29251e";
+
+ctx.font =
+  '17px "IBM Plex Mono", monospace';
+
+ctx.textAlign =
+  "center";
+
+ctx.fillText(
+  "SCAN TO TAKE THE ASSESSMENT",
+  540,
+  1125
+);
+
+
+// QR CODE
+
+try {
+
+  const qrCode =
+    await loadShareImage(
+      "assets/images/assessment-qr.png"
+    );
+
+  ctx.drawImage(
+    qrCode,
+    455,
+    1145,
+    170,
+    170
   );
 
-  ctx.lineTo(
-    810,
-    1150
+} catch (error) {
+
+  console.warn(
+    "QR code could not be added to share card.",
+    error
   );
 
-  ctx.stroke();
+}
 
 
-  ctx.fillStyle =
-    "rgba(41, 37, 30, 0.68)";
+// SAGEWAVE CREDIT
 
-  ctx.font =
-    '19px "IBM Plex Mono", monospace';
+ctx.fillStyle =
+  "rgba(41, 37, 30, 0.58)";
 
-  ctx.fillText(
-    "@sagewavewebdesign",
-    540,
-    1205
-  );
+ctx.font =
+  '14px "IBM Plex Mono", monospace';
 
-
-  ctx.fillStyle =
-    "rgba(41, 37, 30, 0.48)";
-
-  ctx.font =
-    '16px "IBM Plex Mono", monospace';
-
-  ctx.fillText(
-    "UNOFFICIAL FAN EXPERIENCE",
-    540,
-    1248
-  );
+ctx.fillText(
+  "BUILT BY SAGEWAVE WEB DESIGN",
+  540,
+  1335
+);
 
 
   // --------------------------------------
