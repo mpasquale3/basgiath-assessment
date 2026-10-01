@@ -968,9 +968,11 @@ shareButton.addEventListener(
           }
         );
 
-      const shareText =
-        `I was assigned to the ${results[assignedQuadrant].title}. ` +
-        `Where would Basgiath place you? @sagewavewebdesign`;
+     const shareText =
+  `I was assigned to the ${results[assignedQuadrant].title}. ` +
+  `Where would Basgiath place you? ` +
+  `https://mpasquale3.github.io/basgiath-assessment/ ` +
+  `@sagewavewebdesign`;
 
 
       // ----------------------------------
